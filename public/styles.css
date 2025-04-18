@@ -1,0 +1,100 @@
+/* Base Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure footer stays at bottom */
+}
+
+main {
+    flex: 1; /* Allow main content to grow */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    min-height: 50vh; /* Reduced height slightly */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('street-light-bg.jpg') no-repeat center center/cover;
+    /* Make sure you have 'street-light-bg.jpg' in the public folder */
+    position: relative;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px; /* Limit width for readability */
+    padding: 20px;
+}
+
+/* Card Enhancements */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* "How It Works" Steps Styling */
+.step-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #0d6efd; /* Bootstrap primary blue */
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* d-flex handled centering in HTML */
+}
+
+/* Map Container Styling */
+#map {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40; /* Ensure dark background */
+    color: rgba(255, 255, 255, 0.7); /* Lighter text */
+    margin-top: auto; /* Push footer to bottom */
+}
+
+footer h5 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer i {
+    margin-right: 8px;
+}
+
+.footer-links li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links li a:hover {
+    color: #fff;
+}
+
+/* Utility */
+.text-danger {
+    color: #dc3545; /* Bootstrap danger color */
+}
+.d-none {
+    display: none !important; /* Use important to override potential conflicts */
+}
+
+/* Add margin to body bottom equal to footer height if footer is fixed */
+/* body { margin-bottom: 100px; } /* Example if footer had fixed height */

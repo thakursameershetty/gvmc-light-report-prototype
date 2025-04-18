@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Street Light Issue - GVMC Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+             <a class="navbar-brand" href="/">GVMC Lights</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/report.html">Report Issue</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Check Status (N/A)</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container mt-5 mb-5">
+        <div class="card">
+            <div class="card-header">
+                Report a Faulty Street Light (Demo)
+            </div>
+            <div class="card-body">
+                <div class="alert alert-success d-none" role="alert" id="successAlert">
+                    </div>
+                <div class="alert alert-danger d-none" role="alert" id="errorAlert">
+                    </div>
+
+                <form id="reportForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                        <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" placeholder="10 digit number" required>
+                    </div>
+                     <hr>
+                    <div class="mb-3">
+                         <label for="location" class="form-label">Location Description / Address <span class="text-danger">*</span></label>
+                         <textarea class="form-control" id="location" rows="3" required placeholder="Enter nearest landmark, pole number, or address..."></textarea>
+                         <button type="button" class="btn btn-secondary btn-sm mt-2" id="getLocation">
+                             <i class="fas fa-map-marker-alt"></i> Use Current Location
+                         </button>
+                    </div>
+
+                    <div id="map" style="height: 300px; margin-bottom: 15px; display: none;"></div>
+
+                    <input type="hidden" id="latitude">
+                    <input type="hidden" id="longitude">
+
+                    <div class="mb-3">
+                        <label for="issueType" class="form-label">Type of Issue <span class="text-danger">*</span></label>
+                        <select class="form-select" id="issueType" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="Not Working">Light not working</option>
+                            <option value="Flickering">Light flickering</option>
+                            <option value="Always On">Light always on (Day burning)</option>
+                            <option value="Damaged">Pole/Fixture damaged</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Additional Details</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="photo" class="form-label">Upload Photo (Optional - Not handled by basic backend)</label>
+                        <input class="form-control" type="file" id="photo" accept="image/*" disabled> </div>
+
+                    <button type="submit" class="btn btn-primary" id="submitButton">Submit Report</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-4 pb-2 mt-5">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-4 mb-3">
+                     <h5>GVMC Lights (Prototype)</h5>
+                     <p>Demo portal for reporting street light issues.</p>
+                 </div>
+                 <div class="col-md-4 mb-3">
+                     <h5>Quick Links</h5>
+                     <ul class="list-unstyled footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/report.html">Report Issue</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                     </ul>
+                 </div>
+                 <div class="col-md-4 mb-3">
+                    <h5>Official GVMC Contact</h5>
+                    <p>Use official channels for real issues:</p>
+                    <p><i class="fas fa-phone"></i> 180042500009 (Toll-Free)</p>
+                    <p><i class="fab fa-whatsapp"></i> +919666909192</p>
+                    <p><i class="fas fa-globe"></i> gvmc.gov.in</p>
+                 </div>
+             </div>
+             <hr style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+             <div class="text-center">
+                 <p>&copy; 2023-2025 Demo Prototype (Not affiliated with GVMC)</p>
+             </div>
+         </div>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

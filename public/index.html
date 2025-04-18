@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GVMC Street Light Reporting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">GVMC Lights</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/report.html">Report Issue</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Check Status (N/A)</a> </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a> </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section text-white text-center d-flex align-items-center">
+        <div class="container hero-content">
+            <h1 class="display-4">Keeping Visakhapatnam Bright</h1>
+            <p class="lead">Report faulty street lights quickly and easily. Help us maintain a safe and well-lit city.</p>
+            <a href="/report.html" class="btn btn-light btn-lg">Report an Issue Now</a>
+        </div>
+    </section>
+
+    <section class="container mt-5 mb-5">
+        <h2 class="text-center mb-4">Our Features</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fas fa-exclamation-triangle fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Report Issues</h5>
+                        <p class="card-text">Easily report non-working, flickering, or damaged street lights using our simple form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Quick Repairs</h5>
+                        <p class="card-text">Your reports help GVMC identify and prioritize repairs efficiently (via official channels).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fas fa-tasks fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Track Status</h5>
+                        <p class="card-text">Check the status of your reported issues (Note: Feature not implemented in this prototype).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mt-5 mb-5">
+        <h2 class="text-center mb-5">How It Works (Prototype Flow)</h2>
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="step-circle mx-auto d-flex align-items-center justify-content-center mb-2">1</div>
+                <h6>Find Faulty Light</h6>
+                <p>Identify a street light that isn't working correctly.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="step-circle mx-auto d-flex align-items-center justify-content-center mb-2">2</div>
+                <h6>Report Online</h6>
+                <p>Fill out the form with details and location.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="step-circle mx-auto d-flex align-items-center justify-content-center mb-2">3</div>
+                <h6>Data Sent (Demo)</h6>
+                <p>Your report is sent to our basic demo backend.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="step-circle mx-auto d-flex align-items-center justify-content-center mb-2">4</div>
+                <h6>Logged (Not GVMC)</h6>
+                <p>Report logged in console (No real repair initiated).</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-4 pb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>GVMC Lights (Prototype)</h5>
+                    <p>Demo portal for reporting street light issues.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/report.html">Report Issue</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Official GVMC Contact</h5>
+                    <p>Use official channels for real issues:</p>
+                    <p><i class="fas fa-phone"></i> 180042500009 (Toll-Free)</p>
+                    <p><i class="fab fa-whatsapp"></i> +919666909192</p>
+                    <p><i class="fas fa-globe"></i> gvmc.gov.in</p>
+                </div>
+            </div>
+            <hr style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="text-center">
+                <p>&copy; 2023-2025 Demo Prototype (Not affiliated with GVMC)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
